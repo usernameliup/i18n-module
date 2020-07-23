@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Opciones | Guía de nuxt-i18n</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="i18n module for Nuxt.js">
+    <link rel="preload" href="/assets/css/0.styles.d849e5ee.css" as="style"><link rel="preload" href="/assets/js/app.24167b14.js" as="script"><link rel="preload" href="/assets/js/3.a9b6475f.js" as="script"><link rel="preload" href="/assets/js/21.7c26274e.js" as="script"><link rel="prefetch" href="/assets/js/10.158ba448.js"><link rel="prefetch" href="/assets/js/11.89eb890b.js"><link rel="prefetch" href="/assets/js/12.3df969ef.js"><link rel="prefetch" href="/assets/js/13.404c9961.js"><link rel="prefetch" href="/assets/js/14.e83e52ab.js"><link rel="prefetch" href="/assets/js/15.fdf81b5c.js"><link rel="prefetch" href="/assets/js/16.0bcc10db.js"><link rel="prefetch" href="/assets/js/17.595e4e39.js"><link rel="prefetch" href="/assets/js/18.cb120351.js"><link rel="prefetch" href="/assets/js/19.9f44a18f.js"><link rel="prefetch" href="/assets/js/20.36db33a8.js"><link rel="prefetch" href="/assets/js/22.883fc97a.js"><link rel="prefetch" href="/assets/js/23.f1ba9f2f.js"><link rel="prefetch" href="/assets/js/24.ef44a836.js"><link rel="prefetch" href="/assets/js/25.c421dd5d.js"><link rel="prefetch" href="/assets/js/26.1f09e82f.js"><link rel="prefetch" href="/assets/js/27.10004fcd.js"><link rel="prefetch" href="/assets/js/28.0f1fca90.js"><link rel="prefetch" href="/assets/js/29.66dbb5f6.js"><link rel="prefetch" href="/assets/js/30.f81f4f09.js"><link rel="prefetch" href="/assets/js/31.2b422a18.js"><link rel="prefetch" href="/assets/js/32.591b79c4.js"><link rel="prefetch" href="/assets/js/33.8032c578.js"><link rel="prefetch" href="/assets/js/4.981b5153.js"><link rel="prefetch" href="/assets/js/5.7433d54b.js"><link rel="prefetch" href="/assets/js/6.654ae398.js"><link rel="prefetch" href="/assets/js/7.c675da14.js"><link rel="prefetch" href="/assets/js/8.6e62f661.js"><link rel="prefetch" href="/assets/js/9.b4f9c007.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.f5584d80.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.d849e5ee.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/es/" class="home-link router-link-active"><!----> <span class="site-name">Guía de nuxt-i18n</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/es/" class="nav-link">
+  Guía
+</a></div><div class="nav-item"><a href="/es/api/" class="nav-link">
+  Referencias API
+</a></div><div class="nav-item"><a href="https://github.com/nuxt-community/nuxt-i18n/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Notas de la versión
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Idiomas</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/options-reference.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/es/options-reference.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Español
+</a></li></ul></div></div> <a href="https://github.com/nuxt-community/nuxt-i18n" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/es/" class="nav-link">
+  Guía
+</a></div><div class="nav-item"><a href="/es/api/" class="nav-link">
+  Referencias API
+</a></div><div class="nav-item"><a href="https://github.com/nuxt-community/nuxt-i18n/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Notas de la versión
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Idiomas</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/options-reference.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/es/options-reference.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Español
+</a></li></ul></div></div> <a href="https://github.com/nuxt-community/nuxt-i18n" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Guía</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/es/" aria-current="page" class="sidebar-link">Introducción</a></li><li><a href="/es/setup.html" class="sidebar-link">Configuración</a></li><li><a href="/es/basic-usage.html" class="sidebar-link">Uso Básico</a></li><li><a href="/es/options-reference.html" aria-current="page" class="active sidebar-link">Opciones</a></li><li><a href="/es/callbacks.html" class="sidebar-link">Callbacks</a></li><li><a href="/es/routing.html" class="sidebar-link">Enrutamiento</a></li><li><a href="/es/browser-language-detection.html" class="sidebar-link">Detectar idioma del navegador</a></li><li><a href="/es/seo.html" class="sidebar-link">Optimización para motores de búsqueda</a></li><li><a href="/es/lazy-load-translations.html" class="sidebar-link">Carga diferida de traducciones</a></li><li><a href="/es/lang-switcher.html" class="sidebar-link">Selector de idiomas</a></li><li><a href="/es/different-domains.html" class="sidebar-link">Diferentes dominios</a></li><li><a href="/es/vue-i18n-loader.html" class="sidebar-link">vue-i18n-loader</a></li><li><a href="/es/migrating.html" class="sidebar-link">Migración</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="opciones"><a href="#opciones" class="header-anchor">#</a> Opciones</h1> <p>Aquí están todas las opciones disponibles al configurar el módulo y sus valores predeterminados:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  <span class="token comment">// vue-i18n configuration</span>
+  vueI18n<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// If true, vue-i18n-loader is added to Nuxt's Webpack config</span>
+  vueI18nLoader<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// List of locales supported by your app</span>
+  <span class="token comment">// This can either be an array of codes: ['en', 'fr', 'es']</span>
+  <span class="token comment">// Or an array of objects for more complex configurations:</span>
+  <span class="token comment">// [</span>
+  <span class="token comment">//   { code: 'en', iso: 'en-US', file: 'en.js' },</span>
+  <span class="token comment">//   { code: 'fr', iso: 'fr-FR', file: 'fr.js' },</span>
+  <span class="token comment">//   { code: 'es', iso: 'es-ES', file: 'es.js' }</span>
+  <span class="token comment">// ]</span>
+  <span class="token comment">//   `iso` value should have either:</span>
+  <span class="token comment">//   - code of ISO 639-1 (e.g. 'en')</span>
+  <span class="token comment">//   - code of ISO 639-1 and code of ISO 3166-1 alpha-2, with a hyphen (e.g. 'en-US')</span>
+  locales<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// The app's default locale.</span>
+  <span class="token comment">// When using 'prefix_except_default' strategy, URLs for this locale won't have a prefix.</span>
+  <span class="token comment">// It's recommended to set this to some locale regardless of chosen strategy, as it will be</span>
+  <span class="token comment">// used as a locale fallback to use when navigating to a non-existent route.</span>
+  defaultLocale<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Separator used to generated routes name for each locale, you shouldn't</span>
+  <span class="token comment">// need to change this</span>
+  routesNameSeparator<span class="token operator">:</span> <span class="token string">'___'</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Suffix added to generated routes name for default locale if strategy is prefix_and_default,</span>
+  <span class="token comment">// you shouldn't need to change this</span>
+  defaultLocaleRouteNameSuffix<span class="token operator">:</span> <span class="token string">'default'</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Routes generation strategy, can be set to one of the following:</span>
+  <span class="token comment">// - 'no_prefix': routes won't be prefixed</span>
+  <span class="token comment">// - 'prefix_except_default': add locale prefix for every locale except default</span>
+  <span class="token comment">// - 'prefix': add locale prefix for every locale</span>
+  <span class="token comment">// - 'prefix_and_default': add locale prefix for every locale and default</span>
+  strategy<span class="token operator">:</span> <span class="token string">'prefix_except_default'</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Wether or not the translations should be lazy-loaded, if this is enabled,</span>
+  <span class="token comment">// you MUST configure langDir option, and locales must be an array of objects,</span>
+  <span class="token comment">// each containing a file key</span>
+  lazy<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Directory that contains translations files when lazy-loading messages,</span>
+  <span class="token comment">// this CAN NOT be empty if lazy-loading is enabled</span>
+  langDir<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Set this to a path to which you want to redirect users accessing root URL (/)</span>
+  <span class="token comment">// Accepts either string or object with statusCode and path properties. E.g</span>
+  <span class="token comment">// {</span>
+  <span class="token comment">//   statusCode: 301,</span>
+  <span class="token comment">//   path: 'about-us'</span>
+  <span class="token comment">// }</span>
+  rootRedirect<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Enable browser language detection to automatically redirect user</span>
+  <span class="token comment">// to their preferred language as they visit your app for the first time</span>
+  <span class="token comment">// Set to false to disable</span>
+  detectBrowserLanguage<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// If enabled, a cookie is set once a user has been redirected to his</span>
+    <span class="token comment">// preferred language to prevent subsequent redirections</span>
+    <span class="token comment">// Set to false to redirect every time</span>
+    useCookie<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// Set to override the default domain of the cookie. Defaults to host of the site.</span>
+    cookieDomain<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+    <span class="token comment">// Cookie name</span>
+    cookieKey<span class="token operator">:</span> <span class="token string">'i18n_redirected'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Set to always redirect to value stored in the cookie, not just once</span>
+    alwaysRedirect<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token comment">// If no locale for the browsers locale is a match, use this one as a fallback</span>
+    fallbackLocale<span class="token operator">:</span> <span class="token keyword">null</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Set this to true if you're using different domains for each language</span>
+  <span class="token comment">// If enabled, no prefix is added to your routes and you MUST configure locales</span>
+  <span class="token comment">// as an array of objects, each containing a domain key.</span>
+  <span class="token comment">// Refer to the &quot;Different domains&quot; section in the documentation for more information.</span>
+  differentDomains<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// If true, SEO metadata is generated for routes that have i18n enabled.</span>
+  <span class="token comment">// Note that performance can suffer with this enabled and there might be compatibility</span>
+  <span class="token comment">// issues with some plugins. Recommended way is to set up SEO as described in:</span>
+  <span class="token comment">// https://i18n.nuxtjs.org/seo.html#improving-performance</span>
+  seo<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Fallback base URL to use as prefix for alternate URLs in hreflang tags.</span>
+  <span class="token comment">// By default VueRouter's base URL will be used and only if that is not available,</span>
+  <span class="token comment">// fallback URL will be used.</span>
+  <span class="token comment">// Can also be a function that will be passed a Nuxt context as a parameter and</span>
+  <span class="token comment">// should return a string. Useful to make base url dynamic based on request headers.</span>
+  baseUrl<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// By default a store module is registered and kept in sync with the</span>
+  <span class="token comment">// app's i18n current state</span>
+  <span class="token comment">// Set to false to disable</span>
+  vuex<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Module namespace</span>
+    moduleName<span class="token operator">:</span> <span class="token string">'i18n'</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// If enabled, current app's locale is synced with nuxt-i18n store module</span>
+    syncLocale<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// If enabled, current translation messages are synced with nuxt-i18n store module</span>
+    syncMessages<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// Mutation to commit to set route parameters translations</span>
+    syncRouteParams<span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// By default, custom routes are extracted from page files using babel parser,</span>
+  <span class="token comment">// set this to false to disable this</span>
+  parsePages<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// If parsePages option is disabled, the module will look for custom routes in</span>
+  <span class="token comment">// the pages option, refer to the &quot;Routing&quot; section for usage</span>
+  pages<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// By default, custom paths will be encoded using encodeURI method.</span>
+  <span class="token comment">// This does not work with regexp: &quot;/foo/:slug-:id(\\d+)&quot;. If you want to use</span>
+  <span class="token comment">// regexp in the path, then set this option to false, and make sure you process</span>
+  <span class="token comment">// path encoding yourself.</span>
+  encodePaths<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Called right before app's locale changes</span>
+  <span class="token function-variable function">beforeLanguageSwitch</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">oldLocale<span class="token punctuation">,</span> newLocale</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Called after app's locale has changed</span>
+  <span class="token function-variable function">onLanguageSwitched</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">oldLocale<span class="token punctuation">,</span> newLocale</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/nuxt-community/nuxt-i18n/edit/master/docs/es/options-reference.md" target="_blank" rel="noopener noreferrer">Edite esta página en GitHub</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/es/basic-usage.html" class="prev">
+        Uso Básico
+      </a></span> <span class="next"><a href="/es/callbacks.html">
+        Callbacks
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.24167b14.js" defer></script><script src="/assets/js/3.a9b6475f.js" defer></script><script src="/assets/js/21.7c26274e.js" defer></script>
+  </body>
+</html>
