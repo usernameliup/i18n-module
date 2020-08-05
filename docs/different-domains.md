@@ -3,7 +3,11 @@
 You might want to use a different domain name for each language your app supports. To achieve this:
 
 * Set `differentDomains` option to `true`
-* Configure `locales` option as an array of object, where each object has a `domain` key which value is the domain name you'd like to use for the locale
+* Configure `locales` option as an array of objects, where each object has a `domain` key which value is the domain name you'd like to use for that locale (including port if non-default)
+
+:::tip
+You might want to set `detectBrowserLanguage` to `false`. Since it's enabled by default, user can get redirected to a different domain on first visit, if left enabled. Set to `false` if you want to ensure that visiting given domain always shows page in the corresponding locale.
+:::
 
 ```js
 // nuxt.config.js
@@ -42,7 +46,7 @@ When using different domain names, your lang swicher should use regular `<a>` ta
 
 ## Runtime environment variables
 
-Sometimes there's a need to change domains in different environments, e.g. staging and production. 
+Sometimes there's a need to change domains in different environments, e.g. staging and production.
 As `nuxt.config.js` is used at build time it would be necessary to create different builds for different environments.
 
 The alternative way is to keep the domains in Vuex store under `localeDomains` property. It can be accessed by the plugin

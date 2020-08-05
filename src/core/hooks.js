@@ -6,6 +6,10 @@ import { MODULE_NAME, ROOT_DIR, LOCALE_CODE_KEY, LOCALE_ISO_KEY, LOCALE_DOMAIN_K
 export async function buildHook (moduleContainer, options) {
   const nuxtOptions = moduleContainer.options
 
+  if (options.differentDomains) {
+    options.strategy = STRATEGIES.NO_PREFIX
+  }
+
   // Copy lang files to the build directory.
   if (options.langDir) {
     if (!options.locales.length || typeof options.locales[0] === 'string') {
@@ -54,9 +58,6 @@ export async function buildHook (moduleContainer, options) {
         routes.unshift(...localizedRoutes)
       })
     }
-  } else if (options.differentDomains) {
-    // eslint-disable-next-line no-console
-    console.warn('[' + MODULE_NAME + '] The `differentDomains` option and `no_prefix` strategy are not compatible. Change strategy or disable `differentDomains` option.')
   }
 
   if ('forwardedHost' in options) {

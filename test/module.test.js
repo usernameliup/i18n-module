@@ -981,18 +981,6 @@ describe('no_prefix strategy', () => {
     expect(window.$nuxt.localePath({ path: '/about' })).toBe('/about')
   })
 
-  test('localePath with non-current locale triggers warning', async () => {
-    const window = await nuxt.renderAndGetWindow(url('/'))
-    const spy = jest.spyOn(window.console, 'warn').mockImplementation(() => {})
-
-    const newRoute = window.$nuxt.localePath('about', 'fr')
-    expect(spy).toHaveBeenCalled()
-    expect(spy.mock.calls[0][0]).toContain('unsupported when using no_prefix')
-    expect(newRoute).toBe('/about')
-
-    spy.mockRestore()
-  })
-
   test('fallbacks to default locale with invalid locale cookie', async () => {
     const requestOptions = {
       headers: {
@@ -1002,36 +990,6 @@ describe('no_prefix strategy', () => {
     const html = await get('/', requestOptions)
     const dom = getDom(html)
     expect(dom.querySelector('#current-locale')?.textContent).toBe('locale: en')
-  })
-})
-
-describe('no_prefix strategy + differentDomains', () => {
-  /** @type {Nuxt} */
-  let nuxt
-  /** @type {jest.SpyInstance} */
-  let spy
-
-  beforeAll(() => {
-    spy = jest.spyOn(console, 'warn').mockImplementation(() => {})
-  })
-
-  afterAll(async () => {
-    spy.mockRestore()
-    await nuxt.close()
-  })
-
-  test('triggers warning', async () => {
-    const override = {
-      i18n: {
-        strategy: 'no_prefix',
-        differentDomains: true
-      }
-    }
-
-    nuxt = (await setup(loadConfig(__dirname, 'no-lang-switcher', override, { merge: true }))).nuxt
-
-    expect(spy).toHaveBeenCalled()
-    expect(spy.mock.calls[0][0]).toContain('The `differentDomains` option and `no_prefix` strategy are not compatible')
   })
 })
 
