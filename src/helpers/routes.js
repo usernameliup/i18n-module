@@ -5,7 +5,6 @@ const { getPageOptions, getLocaleCodes } = require('./utils')
 exports.makeRoutes = (baseRoutes, {
   defaultLocale,
   defaultLocaleRouteNameSuffix,
-  differentDomains,
   includeUprefixedFallback,
   locales,
   pages,
