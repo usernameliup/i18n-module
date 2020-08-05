@@ -114,8 +114,7 @@ exports.makeRoutes = (baseRoutes, {
 
       // Add route prefix if needed
       const shouldAddPrefix = (
-        // No prefix if app uses different locale domains
-        !differentDomains &&
+        strategy !== STRATEGIES.NO_PREFIX &&
         // No need to add prefix if child's path is relative
         !isChildWithRelativePath &&
         // Skip default locale if strategy is PREFIX_EXCEPT_DEFAULT
