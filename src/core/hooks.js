@@ -34,30 +34,33 @@ export async function buildHook (moduleContainer, options) {
     trailingSlash
   }
 
-  const pagesDir = nuxtOptions.dir && nuxtOptions.dir.pages ? nuxtOptions.dir.pages : 'pages'
+  const isNoPrefixStrategy = options.strategy === STRATEGIES.NO_PREFIX
 
-  if (options.strategy !== STRATEGIES.NO_PREFIX) {
-    if (localeCodes.length) {
-      let includeUprefixedFallback = nuxtOptions.target === 'static'
+  if (localeCodes.length) {
+    const pagesDir = nuxtOptions.dir && nuxtOptions.dir.pages ? nuxtOptions.dir.pages : 'pages'
+
+    let includeUprefixedFallback = false
+    if (!isNoPrefixStrategy) {
+      includeUprefixedFallback = nuxtOptions.target === 'static'
       // Doesn't seem like we can tell whether we are in nuxt generate from the module so we'll
       // take advantage of the 'generate:before' hook to store variable.
       moduleContainer.nuxt.hook('generate:before', () => { includeUprefixedFallback = true })
-
-      // This import (or more specifically 'vue-template-compiler' in helpers/components.js) needs to
-      // be required only at build time to avoid problems when 'vue-template-compiler' dependency is
-      // not available (at runtime, when using nuxt-start).
-      const { makeRoutes } = await import('../helpers/routes')
-      moduleContainer.extendRoutes(routes => {
-        const localizedRoutes = makeRoutes(routes, {
-          ...options,
-          pagesDir,
-          includeUprefixedFallback,
-          trailingSlash
-        })
-        routes.splice(0, routes.length)
-        routes.unshift(...localizedRoutes)
-      })
     }
+
+    // This import (or more specifically 'vue-template-compiler' in helpers/components.js) needs to
+    // be required only at build time to avoid problems when 'vue-template-compiler' dependency is
+    // not available (at runtime, when using nuxt-start).
+    const { makeRoutes } = await import('../helpers/routes')
+    moduleContainer.extendRoutes(routes => {
+      const localizedRoutes = makeRoutes(routes, {
+        ...options,
+        pagesDir,
+        includeUprefixedFallback,
+        trailingSlash
+      })
+      routes.splice(0, routes.length)
+      routes.unshift(...localizedRoutes)
+    })
   }
 
   if ('forwardedHost' in options) {

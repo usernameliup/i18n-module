@@ -54,6 +54,9 @@ exports.makeRoutes = (baseRoutes, {
       componentOptions.locales = componentOptions.locales.filter((locale) => pageOptions.locales.includes(locale))
     }
 
+    // Set to true if one of the localized routes was skipped (because it matched default route's path)
+    let hasSkippedLocalizedRoute = false
+
     // Generate routes for component's supported locales
     for (let i = 0, length1 = componentOptions.locales.length; i < length1; i++) {
       const locale = componentOptions.locales[i]
@@ -139,7 +142,16 @@ exports.makeRoutes = (baseRoutes, {
 
       localizedRoute.path = path
 
-      routes.push(localizedRoute)
+      if (strategy === STRATEGIES.NO_PREFIX && localizedRoute.path === route.path) {
+        hasSkippedLocalizedRoute = true
+      } else {
+        routes.push(localizedRoute)
+      }
+    }
+
+    // To avoid duplicate paths, only add original route if some localized routes did not have custom path.
+    if (strategy === STRATEGIES.NO_PREFIX && hasSkippedLocalizedRoute) {
+      routes.push(route)
     }
 
     return routes

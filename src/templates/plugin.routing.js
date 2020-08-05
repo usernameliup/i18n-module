@@ -62,9 +62,7 @@ function localeRoute (route, locale) {
         // don't prefix default locale
         !(isDefaultLocale && [STRATEGIES.PREFIX_EXCEPT_DEFAULT, STRATEGIES.PREFIX_AND_DEFAULT].includes(strategy)) &&
         // no prefix for any language
-        !(strategy === STRATEGIES.NO_PREFIX) &&
-        // no prefix for different domains
-        !i18n.differentDomains
+        strategy !== STRATEGIES.NO_PREFIX
 
     let path = (isPrefixed ? `/${locale}${route.path}` : route.path)
     path = path.replace(/\/+$/, '') + (trailingSlash ? '/' : '') || '/'
